@@ -1,5 +1,6 @@
 module Page.Person.Person_ exposing (..)
 
+import Html.Extra
 import List.Extra
 import Bootstrap.Grid as Grid
 import Bootstrap.Grid.Col as Col
@@ -117,14 +118,22 @@ showMember (members, m) model =
         [Grid.col []
             [Html.h4 [] [Html.text m.name]
             ,mdToHtml m.long_bio
-            ,Html.h4 [] [Html.text "BDB-Lab Projects"]
-            ,Html.ol
-                []
-                (List.indexedMap (showProject members model) m.projects)
-            ,Html.h4 [] [Html.text "BDB-Lab Publications"]
-            ,Html.ol
-                []
-                (List.indexedMap (showPub members model) m.papers)
+            ,Html.Extra.viewIf
+                (not <| List.isEmpty m.projects)
+                <| Html.div []
+                    [Html.h4 [] [Html.text "BDB-Lab Projects"]
+                    ,Html.ol
+                        []
+                        (List.indexedMap (showProject members model) m.projects)
+                    ]
+            ,Html.Extra.viewIf
+                (not <| List.isEmpty m.papers)
+                <| Html.div []
+                [Html.h4 [] [Html.text "BDB-Lab Publications"]
+                ,Html.ol
+                    []
+                    (List.indexedMap (showPub members model) m.papers)
+                ]
             ,case m.gscholar of
                 Just g ->
                         Html.p []
@@ -148,7 +157,7 @@ showMember (members, m) model =
                     [ maybeLink "mailto:" m.email FeatherIcons.mail
                     , maybeLink "https://github.com/" m.github FeatherIcons.github
                     , maybeLink "https://twitter.com/" m.twitter FeatherIcons.twitter
-                    , maybeLink "https://orcid.com/" m.orcid FeatherIcons.circle
+                    , maybeLink "https://orcid.org/" m.orcid FeatherIcons.circle
                     , maybeLink "https://scholar.google.com/citations?hl=en&user=" m.gscholar FeatherIcons.rss
                     ])
                 ]

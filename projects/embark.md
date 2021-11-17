@@ -2,7 +2,7 @@
 title: "EMBARK"
 short_description: "EMBARK tries to understand AMR"
 author_slugs:
-- luis_pedro_coelho
+- svetlana_ugarcina_perovic
 ---
 
 ![EMBARK](/images/projects/embark/embark.png)

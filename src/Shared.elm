@@ -116,6 +116,19 @@ view sharedData page model toMsg pageView =
                                 Nothing ->
                                     [Html.h3 [] [Html.text "Lab Members"]
                                     ,showMembers sharedData
+                                    ,Html.div []
+                                        [Html.a
+                                            [HtmlAttr.class "twitter-timeline"
+                                            ,HtmlAttr.id "twitter-timeline-a"
+                                            ,HtmlAttr.attribute "data-width" "240"
+                                            ,HtmlAttr.attribute "data-height" "480"
+                                            ,HtmlAttr.href "https://twitter.com/BigDataBiology?ref_src=twsrc%5Etfw"
+
+                                            ]
+                                            [Html.text "Tweets by BigDataBiology"]
+                                        ,Html.div [HtmlAttr.id "twitter-injection-site"]
+                                            []
+                                        ]
                                     ])
                         , Grid.col [Col.lg8]
                             [Html.div [] pageView.body]
