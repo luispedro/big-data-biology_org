@@ -157,7 +157,7 @@ showMember (members, m) model =
                     [ maybeLink "mailto:" m.email FeatherIcons.mail
                     , maybeLink "https://github.com/" m.github FeatherIcons.github
                     , maybeLink "https://twitter.com/" m.twitter FeatherIcons.twitter
-                    , maybeLink "https://orcid.com/" m.orcid FeatherIcons.circle
+                    , maybeLink "https://orcid.org/" m.orcid FeatherIcons.circle
                     , maybeLink "https://scholar.google.com/citations?hl=en&user=" m.gscholar FeatherIcons.rss
                     ])
                 ]

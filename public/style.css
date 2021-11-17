@@ -1,6 +1,7 @@
 h1 {
     color : #005a32;
-    padding-left: 2em;
+    font-variant: small-caps;
+    border-bottom: solid 2px #63ba92;
 }
 h2,h3 {
     color : #005a32;
