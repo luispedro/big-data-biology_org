@@ -18,14 +18,10 @@ ecosystems.
 
 _Lab motto for 2021_: "Everyone is an expert and everyone is a novice"
 
+\[[View past lab mottos](/mottos)\]
+
 <div style="clear : both" />
 
-
-## Updates
-
-- [Big Data Biology Lab's Blog](posts/)
-- [Quarterly updates](https://bigdatabiology.substack.com/)
-- [On Twitter](https://twitter.com/BigDataBiology)
 
 ## News & Upcoming
 

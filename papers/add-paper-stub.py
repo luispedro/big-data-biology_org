@@ -8,7 +8,7 @@ from glob import glob
 BDBauthors = {}
 for f in glob('../people/*.md'):
     if 'README' in f: continue
-    data = yaml.load(open(f).read().split('---')[1])
+    data = yaml.safe_load(open(f).read().split('---')[1])
     BDBauthors[data['name']] = f.split('/')[-1][:-3]
 
 base_url = 'https://api.crossref.org/works/'
@@ -99,6 +99,8 @@ def main(argv):
 
     meta = get_doi_meta(doi)
     remeta = reformat_meta(meta)
+    if slug.startswith(f'{remeta["year"]}_'):
+        slug = slug[len('2021_'):]
     ofile = f'{remeta["year"]}_{slug}.md'
     with open(ofile, 'wt') as out:
         abstract = remeta['abstract']

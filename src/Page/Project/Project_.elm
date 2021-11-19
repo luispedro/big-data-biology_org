@@ -38,16 +38,16 @@ head :
 head static =
     Seo.summary
         { canonicalUrlOverride = Nothing
-        , siteName = "elm-pages"
+        , siteName = "BDB-Lab"
         , image =
             { url = Pages.Url.external "TODO"
             , alt = "elm-pages logo"
             , dimensions = Nothing
             , mimeType = Nothing
             }
-        , description = "TODO"
+        , description = static.data.project.short_description
         , locale = Nothing
-        , title = "TODO title" -- metadata.title -- TODO
+        , title = static.data.project.title
         }
         |> Seo.website
 
@@ -106,7 +106,8 @@ view maybeUrl shared model static =
 showProject p model =
     Grid.simpleRow
         [Grid.col []
-            [mdToHtml p.long_description
+            [Html.h1 [] [Html.text p.title]
+            ,mdToHtml p.long_description
             ]
         ]
 

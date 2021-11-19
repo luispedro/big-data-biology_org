@@ -1,3 +1,10 @@
+@media only screen and (max-width: 600px) {
+  #leftbar {
+    display: none;
+  }
+}
+
+
 h1 {
     color : #005a32;
     font-variant: small-caps;

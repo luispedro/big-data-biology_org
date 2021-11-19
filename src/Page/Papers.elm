@@ -20,6 +20,7 @@ import Html
 import Html.Attributes as HtmlAttr
 import Pages.Url
 
+import SiteMarkdown
 import Shared
 import Lab.Utils exposing (showAuthors)
 import Lab.Lab as Lab
@@ -54,9 +55,9 @@ head static =
             , dimensions = Nothing
             , mimeType = Nothing
             }
-        , description = "TODO"
+        , description = "Interactive list of all the papers published by the BDB-Lab"
         , locale = Nothing
-        , title = "TODO title" -- metadata.title -- TODO
+        , title = "Papers published by the BDB-Lab"
         }
         |> Seo.website
 
@@ -206,7 +207,7 @@ showPaper n members ix p =
                 [Html.p []
                     ([Html.text "by "
                     ] ++ showAuthors p.authors members)
-                ,Html.p [] [Html.text p.short_description]
+                ,SiteMarkdown.mdToHtml p.short_description
                 ]
             ]
         ]]

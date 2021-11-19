@@ -53,7 +53,7 @@ head static =
             }
         , description = "Website of the BDB-Lab (run by Luis Pedro Coelho) at Fudan University"
         , locale = Nothing
-        , title = "TODO title" -- metadata.title -- TODO
+        , title = "Big Data Biology Lab"
         }
         |> Seo.website
 

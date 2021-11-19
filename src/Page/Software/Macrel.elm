@@ -109,16 +109,16 @@ head :
 head static =
     Seo.summary
         { canonicalUrlOverride = Nothing
-        , siteName = "elm-pages"
+        , siteName = "Big Data Biology Lab"
         , image =
             { url = Pages.Url.external "TODO"
             , alt = "elm-pages logo"
             , dimensions = Nothing
             , mimeType = Nothing
             }
-        , description = "TODO"
+        , description = "Macrel is a tool for finding AMPs in (meta)genomes"
         , locale = Nothing
-        , title = "TODO title" -- metadata.title -- TODO
+        , title = "AMP prediction using Macrel"
         }
         |> Seo.website
 
@@ -272,7 +272,7 @@ view :
     -> StaticPayload Data RouteParams
     -> View Msg
 view maybeUrl sharedModel model static =
-    { title = "AMP Prediction"
+    { title = "AMP prediction using Macrel"
     , body =
         [ Grid.simpleRow
             [ Grid.col []
@@ -305,9 +305,10 @@ intro =
                     [ Html.p []
                         [ Html.em []
 
-                            [ Html.text """
-                                            Santos-Júnior CD, Pan S, Zhao X, Coelho LP. 2020. Macrel: antimicrobial peptide screening in genomes and metagenomes.
-                                            PeerJ 8:e10555. doi: 10.7717/peerj.10555"""                  ]
+                            [ Html.text """ Santos-Júnior CD, Pan S, Zhao X, Coelho LP. 2020. Macrel: antimicrobial peptide screening in genomes and metagenomes.
+                                            PeerJ 8:e10555. doi: """
+                            , Html.a [href "https://doi.org/10.7717/peerj.10555"] [Html.text "10.7717/peerj.10555"]
+                            ]
                         ]
                     ]
                 ]
