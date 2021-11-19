@@ -18,12 +18,12 @@ authors:
 - Eric Pelletier
 - Marta Royo-Llonch
 - Simon Roux
-- "Pablo S\xE1nchez"
+- Pablo Sanchez
 - Hideya Uehara
 - Ahmed A. Zayed
 - Georg Zeller
 - Margaux Carmichael
-- "C\xE9line Dimier"
+- Celine Dimier
 - Joannie Ferland
 - Stefanie Kandels
 - Marc Picheral
