@@ -26,7 +26,7 @@ import Lab.Utils exposing (showAuthors)
 import Lab.Lab as Lab
 import Lab.BDBLab as BDBLab
 
-type alias Data = { members : List Lab.Member, paper : Lab.Publication }
+type alias Data = { membersAndAlumni : List Lab.Member, paper : Lab.Publication }
 type alias RouteParams = { paper : String }
 type alias Model = { }
 type Msg =
@@ -66,7 +66,7 @@ page = Page.prerender
                         case List.Extra.find (\p -> String.toLower p.slug == String.toLower routeParams.paper) ms of
                             Just p -> DataSource.succeed p
                             Nothing -> DataSource.fail "Unknown paper??")
-                    |> (DataSource.map2 Data BDBLab.members)
+                    |> (DataSource.map2 Data BDBLab.membersAndAlumni)
         }
         |> Page.buildWithLocalState
             { view = view
@@ -93,12 +93,12 @@ view :
 view maybeUrl shared model static =
     let
         active = static.data.paper.authors |>
-            List.filterMap (\a -> case List.filter (\m -> m.name == a) static.data.members of
+            List.filterMap (\a -> case List.filter (\m -> m.name == a) static.data.membersAndAlumni of
                 [] -> Nothing
                 (m :: _) -> Just m)
     in
         { title = static.data.paper.title
-        , body = [showPaper static.data.paper static.data.members model]
+        , body = [showPaper static.data.paper static.data.membersAndAlumni model]
         , sidebar = Just <|
                 Html.div []
                     [Html.h3 [] [Html.text "BDB-Lab members involved"]
@@ -173,6 +173,7 @@ makeBubble m =
                     []
                 ,Html.br [] []
                 ,Html.text m.name
+                ,Html.text (if m.left /= Nothing then " (alumni)" else "")
                 ]
             ]
         ]
