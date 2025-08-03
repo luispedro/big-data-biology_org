@@ -36,8 +36,6 @@ _Lab motto for 2021_: "Everyone is an expert and everyone is a novice"
 
 ### 2025
 
-**Jul 20-24** [Luis](/person/luis_pedro_coelho) will be at the [ISMB/ECCB 2025 – Intelligent Systems for Molecular Biology & European Conference on Computational Biology](https://www.iscb.org/ismbeccb2025)
-
 **Aug 17-22** [Luis](/person/luis_pedro_coelho) will be a speaker at the [Decoding Microproteins Across Evolution and Disease GRC](https://www.grc.org/decoding-microproteins-across-evolution-and-disease-conference/2025/).
 
 **Sep 16-19** [Luis](/person/luis_pedro_coelho) will be at the [EMBL Human Microbiome Symposium](https://www.embl.org/about/info/course-and-conference-office/events/ees25-08/).
@@ -55,6 +53,8 @@ _Feel free to get in touch if you will be at any of these events_ (actually, fee
 See our [publications page](papers/) for recent publications.
 
 ### 2025
+
+**July 20-24** [Luis](/person/luis_pedro_coelho) was at the [ISMB/ECCB 2025 – Intelligent Systems for Molecular Biology & European Conference on Computational Biology](https://www.iscb.org/ismbeccb2025).
 
 **July 9** New preprint on antimicrobial resistance in wastewater is online: [Persistence of High-Risk Antimicrobial Resistance Genes in Extracellular DNA Along an Urban Wastewater-River Continuum](/paper/2025_wastewater_amr).
 
